@@ -9,17 +9,26 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        aumlaut: aumlaut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(KP_NUMBER_0) &kp LA(KP_NUMBER_2) &kp LA(KP_NUMBER_2) &kp LA(KP_NUMBER_8)>;
+            label = "AUMLAUT";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1         &kp N2     &kp N3      &kp N4  &kp N5                              &kp N6     &kp N7  &kp N8    &kp N9  &kp N0  &kp EQUAL
-&kp TAB    &kp SQT        &kp COMMA  &kp PERIOD  &kp P   &kp Y                               &kp F      &kp G   &kp C     &kp R   &kp L   &kp SLASH
-&kp LCTRL  &kp A          &kp O      &kp E       &kp U   &kp I                               &kp D      &kp H   &kp T     &kp N   &kp S   &kp MINUS
-&kp LSHFT  &kp SEMICOLON  &kp Q      &kp J       &kp K   &kp X   &kp LBKT         &kp RBKT   &kp B      &kp M   &kp W     &kp V   &kp Z   &kp RSHFT
-                                     &kp LALT    &mo 1   &mo 2   &kp BACKSPACE    &kp ENTER  &kp SPACE  &mo 2   &kp RGUI
+&kp ESC    &kp N1         &kp N2     &kp N3         &kp N4  &kp N5                              &kp N6     &kp N7  &kp N8    &kp N9  &kp N0  &kp EQUAL
+&kp TAB    &kp SQT        &kp COMMA  &kp PERIOD     &kp P   &kp Y                               &kp F      &kp G   &kp C     &kp R   &kp L   &kp SLASH
+&kp LCTRL  &kp A          &kp O      &kp E          &kp U   &kp I                               &kp D      &kp H   &kp T     &kp N   &kp S   &kp MINUS
+&kp LSHFT  &kp SEMICOLON  &kp Q      &kp J          &kp K   &kp X   &kp LBKT         &kp RBKT   &kp B      &kp M   &kp W     &kp V   &kp Z   &kp RSHFT
+                                     &kp RIGHT_ALT  &mo 1   &mo 2   &kp BACKSPACE    &kp ENTER  &kp SPACE  &mo 2   &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
